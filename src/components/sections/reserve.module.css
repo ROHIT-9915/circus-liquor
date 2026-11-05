@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Reserve Section & Footer Styles — Circus Liquor Luxury Brand
+   Warm Cream (#F5F0E7), Soft Beige (#E9DFD0), Champagne Gold (#C5A46D), Dark Brown (#30251E)
+   ========================================================================== */
+
+.reserveSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-beige);
+  padding: 8rem 2.5rem;
+  border-top: 1px solid var(--color-gold-subtle);
+  overflow: hidden;
+}
+
+.reserveSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--color-cream), transparent);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.sectionHeader {
+  max-width: 760px;
+  margin-bottom: 5rem;
+}
+
+.tagline {
+  display: inline-block;
+  font-family: var(--font-sans-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-serif-family);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-dark-brown);
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-family: var(--font-sans-family);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-brown-muted);
+  max-width: 620px;
+}
+
+/* Pillars Grid */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 6rem;
+}
+
+.pillarCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 0;
+}
+
+.pillarNumber {
+  font-family: var(--font-serif-family);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.pillarTitle {
+  font-family: var(--font-serif-family);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--color-dark-brown);
+  margin-bottom: 1rem;
+}
+
+.pillarText {
+  font-family: var(--font-sans-family);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--color-brown-muted);
+  flex-grow: 1;
+}
+
+.pillarLine {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold-muted);
+  margin-top: 2rem;
+}
+
+/* Editorial Quote */
+.quoteBlock {
+  padding: 4rem 3rem;
+  background-color: var(--color-cream);
+  border-left: 3px solid var(--color-gold);
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(48, 37, 30, 0.03);
+}
+
+.quoteText {
+  font-family: var(--font-serif-family);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-dark-brown);
+  margin-bottom: 1.25rem;
+}
+
+.quoteAuthor {
+  font-family: var(--font-sans-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Brand Footer
+   ========================================================================== */
+.footer {
+  background-color: var(--color-dark-brown);
+  color: var(--color-cream);
+  padding: 5rem 2.5rem 3rem 2.5rem;
+  border-top: 1px solid var(--color-gold-subtle);
+}
+
+.footerContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(245, 240, 231, 0.12);
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLogo {
+  font-family: var(--font-serif-family);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-cream);
+  line-height: 1.1;
+}
+
+.footerTagline {
+  font-family: var(--font-sans-family);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  margin-top: 0.5rem;
+}
+
+.footerNavTitle {
+  display: block;
+  font-family: var(--font-sans-family);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.footerList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footerList a {
+  font-family: var(--font-sans-family);
+  font-size: 0.82rem;
+  color: rgba(245, 240, 231, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerList a:hover {
+  color: var(--color-gold);
+}
+
+.footerText {
+  font-family: var(--font-sans-family);
+  font-size: 0.82rem;
+  color: rgba(245, 240, 231, 0.75);
+  line-height: 1.6;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.5rem;
+  font-family: var(--font-sans-family);
+  font-size: 0.72rem;
+  color: rgba(245, 240, 231, 0.5);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.legalNotice {
+  max-width: 600px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footerTop {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reserveSection {
+    padding: 5rem 1.5rem;
+  }
+
+  .footerTop {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

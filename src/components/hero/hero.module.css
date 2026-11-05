@@ -1,0 +1,762 @@
+/* ==========================================================================
+   Circus Liquor — Cinematic Hero Styles
+   Luxury Minimalist Palette: Warm Cream (#F5F0E7), Soft Beige (#E9DFD0), Champagne Gold (#C5A46D), Dark Brown (#30251E)
+   ========================================================================== */
+
+/* Outer Section Container */
+.heroSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-cream);
+  overflow: hidden;
+}
+
+/* Pinned Viewport Container */
+.heroViewport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-cream);
+  overflow: hidden;
+}
+
+/* Subtle architectural grain & vignette */
+.heroViewport::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(228, 221, 209, 0) 60%,
+    rgba(215, 205, 190, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Top Navigation
+   ========================================================================== */
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding: 1.5rem 3.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 231, 0.88) 0%,
+    rgba(245, 240, 231, 0.4) 65%,
+    transparent 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-gold-subtle);
+  transition: all 0.4s ease;
+}
+
+.navContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Wordmark */
+.navBrand {
+  display: flex;
+  flex-direction: column;
+}
+
+.navLogo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-dark-brown);
+  transition: opacity 0.3s ease;
+}
+
+.navLogo:hover {
+  opacity: 0.85;
+}
+
+.logoTitle {
+  font-family: var(--font-serif-family);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-dark-brown);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.logoSubtitle {
+  font-family: var(--font-sans-family);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+}
+
+/* Navigation Links (Center) */
+.navCenter {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  font-family: var(--font-sans-family);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-dark-brown);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navLink:hover {
+  color: var(--color-gold-dark);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Action Button (Right) */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.exploreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.45rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--color-dark-brown);
+  font-family: var(--font-sans-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exploreButton:hover {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(197, 164, 109, 0.25);
+}
+
+.exploreArrow {
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.exploreButton:hover .exploreArrow {
+  transform: translateX(3px);
+}
+
+/* Mobile Menu Toggle */
+.mobileMenuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menuBar {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-dark-brown);
+  transition: all 0.3s ease;
+}
+
+.menuBarTopOpen {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menuBarBottomOpen {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Central Video Stage & Composition
+   ========================================================================== */
+.videoStage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  padding: 3rem 1.5rem;
+  pointer-events: none;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  aspect-ratio: 16 / 9;
+  max-height: 82vh;
+  max-height: 82dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video with smooth feathered edge mask to seamlessly blend into background */
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity;
+}
+
+.heroVideoLoaded {
+  opacity: 1;
+}
+
+/* Luxury Skeleton / Buffering Indicator */
+.videoSkeleton {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.skeletonRing {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--color-gold-subtle);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  animation: spinRing 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spinRing {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skeletonText {
+  font-family: var(--font-sans-family);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+.videoError {
+  position: absolute;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(245, 240, 231, 0.95);
+  border: 1px solid var(--color-gold);
+  max-width: 420px;
+  border-radius: 4px;
+}
+
+.errorTitle {
+  font-family: var(--font-serif-family);
+  font-size: 1.25rem;
+  color: var(--color-dark-brown);
+  margin-bottom: 0.5rem;
+}
+
+.errorDetails {
+  font-size: 0.8rem;
+  color: var(--color-brown-muted);
+}
+
+/* ==========================================================================
+   Editorial Typography & Brand Overlays
+   ========================================================================== */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 7rem 4.5rem 3rem 4.5rem;
+}
+
+/* Initial Headline Block — Art-directed upper left quadrant */
+.headlineBlock {
+  max-width: 520px;
+  pointer-events: auto;
+  will-change: opacity, transform;
+  margin-top: 1rem;
+}
+
+.brandLabel {
+  display: inline-block;
+  font-family: var(--font-sans-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+.mainHeading {
+  font-family: var(--font-serif-family);
+  font-size: clamp(2.4rem, 4.2vw, 4rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--color-dark-brown);
+  margin-bottom: 1.2rem;
+}
+
+.subHeading {
+  font-family: var(--font-sans-family);
+  font-size: clamp(0.88rem, 1.05vw, 1.02rem);
+  font-weight: 350;
+  line-height: 1.65;
+  color: var(--color-brown-muted);
+  max-width: 440px;
+}
+
+/* Synchronized Editorial Milestones (Callouts during scroll) */
+.milestonesContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.milestoneCard {
+  position: absolute;
+  max-width: 320px;
+  padding: 1.35rem 1.6rem;
+  background: rgba(245, 240, 231, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 2px solid var(--color-gold);
+  border-top: 1px solid rgba(197, 164, 109, 0.2);
+  box-shadow: 0 12px 36px rgba(48, 37, 30, 0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.milestoneLeft {
+  left: 4.5rem;
+  top: 52%;
+  transform: translateY(-50%) translateX(-20px);
+}
+
+.milestoneRight {
+  right: 4.5rem;
+  top: 52%;
+  transform: translateY(-50%) translateX(20px);
+}
+
+.milestoneIndex {
+  font-family: var(--font-serif-family);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.milestoneTitle {
+  font-family: var(--font-serif-family);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-dark-brown);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.milestoneDesc {
+  font-family: var(--font-sans-family);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--color-brown-muted);
+}
+
+/* Concluding Climax Overlay (at ~90-100% progress) */
+.climaxBlock {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 620px;
+  width: 90%;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(245, 240, 231, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-gold-subtle);
+  border-radius: 6px;
+  padding: 2.25rem 3rem;
+  box-shadow: 0 16px 40px rgba(48, 37, 30, 0.07);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.climaxBlockActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.climaxTitle {
+  font-family: var(--font-serif-family);
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 400;
+  color: var(--color-dark-brown);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.climaxCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2.2rem;
+  background-color: var(--color-dark-brown);
+  color: var(--color-cream);
+  border: 1px solid var(--color-dark-brown);
+  border-radius: 9999px;
+  font-family: var(--font-sans-family);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  margin-top: 1.25rem;
+}
+
+.climaxCta:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 164, 109, 0.35);
+}
+
+/* ==========================================================================
+   Scroll Indicator
+   ========================================================================== */
+.scrollIndicatorWrapper {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.scrollContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.scrollLabel {
+  font-family: var(--font-sans-family);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+.scrollTrack {
+  width: 1px;
+  height: 48px;
+  background-color: var(--color-gold-muted);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollThumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gold-light),
+    var(--color-gold)
+  );
+  animation: scrollPulse 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(260%);
+    opacity: 0;
+  }
+}
+
+/* Reduced Motion Mode */
+.reducedMotionHero {
+  min-height: 80vh;
+  padding: 8rem 2rem 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Laptop / Medium Desktop (approx 1280x720) */
+@media (max-width: 1366px) {
+  .navigation {
+    padding: 1.25rem 2.5rem;
+  }
+
+  .heroOverlay {
+    padding: 6.5rem 3rem 2.5rem 3rem;
+  }
+
+  .mainHeading {
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  }
+
+  .headlineBlock {
+    max-width: 460px;
+  }
+
+  .milestoneLeft {
+    left: 2.5rem;
+  }
+
+  .milestoneRight {
+    right: 2.5rem;
+  }
+}
+
+/* Tablet (approx 768x1024) */
+@media (max-width: 1024px) {
+  .navigation {
+    padding: 1.25rem 2rem;
+  }
+
+  .navList {
+    gap: 2rem;
+  }
+
+  .navLink {
+    font-size: 0.7rem;
+  }
+
+  .heroOverlay {
+    padding: 6rem 2rem 2.5rem 2rem;
+  }
+
+  .headlineBlock {
+    max-width: 440px;
+  }
+
+  .mainHeading {
+    font-size: 2.4rem;
+  }
+
+  .milestoneCard {
+    max-width: 260px;
+    padding: 1.1rem 1.3rem;
+  }
+
+  .milestoneLeft {
+    left: 1.5rem;
+  }
+
+  .milestoneRight {
+    right: 1.5rem;
+  }
+}
+
+/* Mobile Screens (approx 390x844) */
+@media (max-width: 768px) {
+  .navigation {
+    padding: 1rem 1.25rem;
+  }
+
+  .logoTitle {
+    font-size: 1.2rem;
+  }
+
+  .logoSubtitle {
+    font-size: 0.52rem;
+  }
+
+  /* Mobile menu collapse */
+  .mobileMenuToggle {
+    display: flex;
+  }
+
+  .navCenter {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-cream);
+    border-bottom: 1px solid var(--color-gold-subtle);
+    padding: 1.75rem 2rem;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(48, 37, 30, 0.08);
+  }
+
+  .navCenterOpen {
+    display: flex;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .navLink {
+    font-size: 0.85rem;
+    padding: 0.25rem 0;
+  }
+
+  .exploreButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.65rem;
+  }
+
+  .videoStage {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .videoWrapper {
+    max-height: 60vh;
+  }
+
+  .heroOverlay {
+    padding: 5.5rem 1.25rem 2rem 1.25rem;
+  }
+
+  .headlineBlock {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .mainHeading {
+    font-size: 1.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .subHeading {
+    font-size: 0.82rem;
+    margin: 0 auto;
+  }
+
+  /* Simplify milestones on mobile to preserve bottle focus */
+  .milestoneCard {
+    display: none;
+  }
+
+  .climaxBlock {
+    padding: 1.5rem 1.25rem;
+    bottom: 2rem;
+  }
+
+  .climaxTitle {
+    font-size: 1.8rem;
+  }
+
+  .scrollIndicatorWrapper {
+    bottom: 1.5rem;
+  }
+
+  .scrollTrack {
+    height: 36px;
+  }
+}
